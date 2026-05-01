@@ -1,0 +1,15 @@
+# Large data files
+data_raw/
+
+# R specific
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# System files
+.DS_Store
+
+# Temporary files
+*.tmp
+*~
