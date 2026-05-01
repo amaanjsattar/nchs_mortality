@@ -37,8 +37,14 @@ Generates death counts for females in SEER registry areas (2000-2020), by age gr
 
 ## Documentation
 
-See docs/METHODS.md for detailed methodology.
+See docs/METHODS.md for detailed methodology. See docs/VALIDATION_REPORT.md for sanity checks and verifications of scripting logic.
 
-## Author
+## Primary Author
 
-Amaan Jogia-Sattar
+Amaan Jogia-Sattar, University of California, Los Angeles 
+Department of Biostatistics, Fielding School of Public Health
+
+## Collaborator and Editor
+
+Dr. Jay Xu, University of Toronto
+Institute of Health Emergencies and Pandemics
