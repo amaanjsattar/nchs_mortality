@@ -1,7 +1,7 @@
-# NCHS Mortality Analysis — Validation Report
+# NCHS Mortality Analysis: Validation + Sanity Checks
 
-**Date:** 2026-04-30  
-**Analyst:** Amaan Sattar  
+**Date: April 2026** 
+**Author: Amaan Jogia-Sattar**
 **Dataset:** NCHS Detailed Mortality Restricted-Use Files, 2000–2020  
 **Output file:** `outputs/nchs_death_counts.csv`
 
@@ -96,7 +96,7 @@ Raw file checked: `MULT2015.USAllCnty.txt` (1,341,033 female records)
 | Cherokee Nation AIAN non-Hispanic females | 581 | ✓ |
 | Total AIAN non-Hispanic in 3 AIAN registries | 1,973 | ✓ |
 
-AIAN-only registry counts are small relative to the ~1.3M total female records — as
+AIAN-only registry counts are small relative to the ~1.3M total female records, as
 expected for three geographically limited AIAN-only registries.
 
 ### 2.3 Spot Checks
@@ -169,8 +169,8 @@ This produces a 6-year inclusive window that shifts up by 1 year per additional 
 ### 4.2 Diagonal consistency check
 
 **Critical finding:** When two different (baseline, lag) combinations produce the same age
-window, their death counts must be identical — they are counting the same records from the
-same raw file. This tests that the formula is correctly implemented across all code paths.
+window, their death counts must be identical (they are counting the same records from the
+same raw file). This tests that the formula is correctly implemented across all code paths.
 
 **Pair A: 50–54 lag 6 vs 55–59 lag 1 (both window 55–60)**
 
@@ -213,7 +213,7 @@ All 16 overlapping years: **match**
 - **Minimum count** (9,690) occurs in 2000 for the youngest age group at lag 1 — the
   earliest year with the narrowest age window, as expected.
 - **Maximum count** (101,908) occurs in 2020 for the oldest age group at lag 15 (window
-  79–84) — the latest year with the widest accumulated age window, as expected.
+  79–84). This is the latest year with the widest accumulated age window, as expected.
 
 ---
 
