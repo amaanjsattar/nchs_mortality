@@ -1,6 +1,6 @@
 # NCHS Mortality Reference Counts: Methods Documentation
 
-**Project:** SMR Analysis — NCHS Reference Population Death Counts  
+**Project:** SMR Analysis: NCHS Reference Population Death Counts  
 **Author:** Amaan Jogia-Sattar  
 **Last updated:** 2026-04-29
 
@@ -93,7 +93,7 @@ Field positions were verified through two independent methods:
   coded variable. The `.doc` layout document specifies positions 80–81; confirmed by `"00"`
   dominance (98/100 records) consistent with Alabama county demographics in the sample.
 
-#### Standard format (2003–2020) — 490-character (2003–2019) or 817-character (2020) records
+#### Standard format (2003–2020): 490-character (2003–2019) or 817-character (2020) records
 
 | Field | Positions | Size | Notes |
 |-------|-----------|------|-------|
@@ -127,7 +127,7 @@ analysis. See Section 3 for full rationale.
 For the standard format (2003–2020), two race fields are present in the files:
 
 - **Detail race (positions 445–446):** Based on bridged-race methodology (see Section 3.2).
-  Code `"03"` = American Indian (includes Aleuts and Eskimos). Fully populated (100%) for
+  Code `"03"` = American Indian. Fully populated (100%) for
   all years 2003–2020; blank in 2021.
 
 - **Race Recode 40 (positions 489–490):** Based on single-race or multiple-race
@@ -182,7 +182,7 @@ Three considerations favor the detail race field over Race Recode 40:
 | 2012 | 16,556 | 15,466 | −1,090 (−6.6%) |
 | 2017 | 20,425 | 18,618 | −1,807 (−8.9%) |
 
-### 3.4 Why the Analysis Stops at 2020
+### 3.4 Why 2020 is the Upper Endpoint
 
 Starting with the 2021 data file, the detail race field (445–446) is entirely blank
 (confirmed: 0 of 3,472,120 records populated). NCHS discontinued bridged-race data after
@@ -192,7 +192,7 @@ which uses the race-alone definition.
 
 Including 2021 under Race Recode 40 would introduce a definitional discontinuity in the
 AIAN group: years 2000–2020 would include mixed-race AIAN (via bridging), while 2021
-would include only AIAN-alone individuals — an estimated undercount of 8–10% based on the
+would include only AIAN-alone individuals, an estimated undercount of 8–10% based on the
 2012 and 2017 comparisons above. For the three AIAN-only registries, where race is the
 primary inclusion criterion, this discontinuity is unacceptable without additional
 methodological work.
@@ -230,11 +230,11 @@ of occurrence), consistent with SEER's population-based catchment area definitio
 
 Registries fall into two geographic types:
 
-**Whole-state registries** — all deaths in the state are included:
+**Whole-state registries**: all deaths in the state are included:
 Connecticut, Hawaii, Iowa, New Jersey, New Mexico, New York, Utah, Kentucky, Louisiana,
 Illinois, Idaho, Texas, Georgia, California, Alaska, Arizona
 
-**County-specific registries** — only deaths in the listed counties are included:
+**County-specific registries**: only deaths in the listed counties are included:
 
 - **Seattle–Puget Sound** (13 Washington counties): Clallam (009), Grays Harbor (027),
   Island (029), Jefferson (031), King (033), Kitsap (035), Mason (045), Pierce (053),
@@ -256,7 +256,7 @@ and Cherokee Nation (14 OK counties). For deaths in these geographies, an additi
 filter is applied: the record must have race code `"03"` in the detail race field **AND**
 non-Hispanic ethnicity (see Section 4.4).
 
-This conjunction was added per advisor guidance. The prior implementation used race `"03"`
+This conjunction was added per guidance from Dr. Jay Xu and colleagues at the University of Toronto. The prior implementation used race `"03"`
 alone, which captured a slightly broader group including Hispanic AIAN individuals.
 The non-Hispanic restriction applies only to these three registries; all other registries
 do not apply a race filter.
@@ -313,7 +313,7 @@ Cause group definitions are in `configs/cod_groups.R`. Matching is prefix-based:
 4-character ICD-10 code is retained if it starts with any prefix string in the group's
 definition (see Section 5 for the complete code mappings).
 
-**Special case — `"other_nonbreast_cancers"`:** This group is defined by exclusion (all
+**Special case: `"other_nonbreast_cancers"`:** This group is defined by exclusion (all
 ICD-10 codes beginning with `"C"` that are not breast cancer codes), so it cannot be
 expressed as a simple prefix list. It is handled as a named special case in
 `apply_cod_filter()`.
@@ -338,7 +338,7 @@ ICD revision discontinuity within this range.
 
 #### `breast_cancer`
 
-Female breast cancer, subsites C50.0–C50.6, C50.8–C50.9. Code C50.7 (nipple and areola)
+Female breast cancer, subsites C50.0–C50.6, C50.8–C50.9. Code C50.7
 is excluded per the standard SEER breast cancer definition.
 
 ```
