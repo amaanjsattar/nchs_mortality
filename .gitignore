@@ -1,5 +1,6 @@
-# Large data files
+# Large data files — not committed; see README for acquisition instructions
 data_raw/
+pop_data/
 
 # R specific
 .Rhistory

@@ -23,8 +23,12 @@ YEARS <- 2000:2020
 # ---------------------------------------------------------------------------
 # File system
 # ---------------------------------------------------------------------------
-BASE_DIR   <- "/Users/amaanjsattar/nchs_mortality/data_raw"
-OUTPUT_DIR <- "/Users/amaanjsattar/nchs_mortality/outputs"
+# Paths are relative to the project root. Run scripts from the project root:
+#   Rscript scripts/run_analysis.R
+#   Rscript scripts/run_tables.R
+BASE_DIR   <- "data_raw"   # NCHS restricted-use mortality files (gitignored)
+OUTPUT_DIR <- "outputs"    # Generated CSVs (committed)
+POP_DIR    <- "pop_data"   # Census population CSVs (gitignored; see README)
 
 # ---------------------------------------------------------------------------
 # Sex filter — females only
